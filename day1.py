@@ -6,18 +6,27 @@ sequence = str(input('please enter your sequence now: '))
 print('your input was: ' + sequence)
 
 sum = 0
-count = 0
-while count <= len(sequence)-1:
-    if count == len(sequence)-1:
-        print('current: ' + str(sequence[count]))
-        print('last: ' + str(sequence[count-1]))
+count = 1
+while count <= len(sequence):
+    if count == len(sequence):
+        if int(sequence[count-1]) == int(sequence[0]):
+            print('next digit matches')
+            sum = sum + int(sequence[count-1])
+        print('current: ' + str(sequence[count-1]))
+        # print('last: ' + str(sequence[count-1]))
         print('next: ' + str(sequence[0]))
     else:
-        print('current: ' + str(sequence[count]))
-        print('last: ' + str(sequence[count-1]))
-        print('next: ' + str(sequence[count+1]))
+        if int(sequence[count-1]) == int(sequence[count]):
+            print('next digit matches')
+            sum = sum + int(sequence[count-1])
+        print('current: ' + str(sequence[count-1]))
+        # print('last: ' + str(sequence[count-1]))
+        print('next: ' + str(sequence[count]))
+
+    
+
     count = count + 1
 
-
-
 print('the sum of the digits of your input is: ' + str(sum))
+
+
